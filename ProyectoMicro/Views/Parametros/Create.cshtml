@@ -1,0 +1,65 @@
+﻿@model ProyectoMicro.Models.Parametro
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Parametro</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.temperatura, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.temperatura)
+                @Html.ValidationMessageFor(model => model.temperatura)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.humedad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.humedad)
+                @Html.ValidationMessageFor(model => model.humedad)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.riego, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.riego)
+                @Html.ValidationMessageFor(model => model.riego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.iluminacion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.iluminacion)
+                @Html.ValidationMessageFor(model => model.iluminacion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

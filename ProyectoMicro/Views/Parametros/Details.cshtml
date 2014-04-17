@@ -1,0 +1,50 @@
+﻿@model ProyectoMicro.Models.Parametro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Parametro</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.temperatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.temperatura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.humedad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.humedad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.riego)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.riego)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iluminacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iluminacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
