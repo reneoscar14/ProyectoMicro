@@ -23,7 +23,7 @@ namespace ProyectoMicro
             routes.MapRoute(
 
                 name: "Parametros",
-                url: "{controller}/{action}/{temperatura}/{humedad}/{riego}/{iluminacion}"
+                url: "{controller}/{action}/{modo}/{temperatura}/{humedad}/{riego}/{iluminacion}/{ventilacion1}/{ventilacion2}"
                 );
         }
     }

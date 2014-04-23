@@ -4,24 +4,34 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Estado del Sistema</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.temperatura)
+            @Html.DisplayNameFor(model => model.Modo_Operacion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.humedad)
+            @Html.DisplayNameFor(model => model.Temperatura)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.riego)
+            @Html.DisplayNameFor(model => model.Humedad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.iluminacion)
+            @Html.DisplayNameFor(model => model.Riego)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Iluminacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ventilador_Aire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extractor_Aire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastChange)
         </th>
         <th></th>
     </tr>
@@ -29,16 +39,28 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.temperatura)
+            @Html.DisplayFor(modelItem => item.Modo_Operacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.humedad)
+            @Html.DisplayFor(modelItem => item.Temperatura)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.riego)
+            @Html.DisplayFor(modelItem => item.Humedad)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.iluminacion)
+            @Html.DisplayFor(modelItem => item.Riego)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iluminacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ventilador_Aire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extractor_Aire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastChange)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

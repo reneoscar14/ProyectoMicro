@@ -6,7 +6,6 @@
 
 <h2>Edit</h2>
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -18,34 +17,66 @@
         @Html.HiddenFor(model => model.ID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.temperatura, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Modo_Operacion, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.temperatura)
-                @Html.ValidationMessageFor(model => model.temperatura)
+                @Html.EditorFor(model => model.Modo_Operacion)
+                @Html.ValidationMessageFor(model => model.Modo_Operacion)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.humedad, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Temperatura, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.humedad)
-                @Html.ValidationMessageFor(model => model.humedad)
+                @Html.EditorFor(model => model.Temperatura)
+                @Html.ValidationMessageFor(model => model.Temperatura)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.riego, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Humedad, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.riego)
-                @Html.ValidationMessageFor(model => model.riego)
+                @Html.EditorFor(model => model.Humedad)
+                @Html.ValidationMessageFor(model => model.Humedad)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.iluminacion, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Riego, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.iluminacion)
-                @Html.ValidationMessageFor(model => model.iluminacion)
+                @Html.EditorFor(model => model.Riego)
+                @Html.ValidationMessageFor(model => model.Riego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Iluminacion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Iluminacion)
+                @Html.ValidationMessageFor(model => model.Iluminacion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ventilador_Aire, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ventilador_Aire)
+                @Html.ValidationMessageFor(model => model.Ventilador_Aire)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Extractor_Aire, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Extractor_Aire)
+                @Html.ValidationMessageFor(model => model.Extractor_Aire)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastChange, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastChange)
+                @Html.ValidationMessageFor(model => model.LastChange)
             </div>
         </div>
 
@@ -60,7 +91,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -14,20 +14,27 @@ namespace ProyectoMicro.Controllers
     {
         private ParametroDBContext db = new ParametroDBContext();
 
-        public ActionResult PLZGOD(float temperatura, float humedad, int riego, int iluminacion){
-            Parametro param = new Parametro();
-            param.temperatura = temperatura;
-            param.humedad = humedad;
-            param.riego = riego;
-            param.iluminacion = iluminacion;
+        // GET: /Parametros/
 
+      
+        
+        public ActionResult GETParametros(string modo,float temperatura, float humedad, string riego, string iluminacion, string ventilacion1, string ventilacion2)
+        {
+            Parametro param = new Parametro();
+            param.Temperatura = temperatura;
+            param.Humedad = humedad;
+            param.Riego = riego;
+            param.Iluminacion = iluminacion;
+            param.Ventilador_Aire = ventilacion1;
+            param.Extractor_Aire = ventilacion2;
+            param.Modo_Operacion = modo;
+            param.LastChange = DateTime.Now;
             db.Parametros.Add(param);
             db.SaveChanges();
             return View(db.Parametros.ToList());
         }
-        
 
-        // GET: /Parametros/
+
         public ActionResult Index()
         {
             return View(db.Parametros.ToList());
@@ -59,7 +66,7 @@ namespace ProyectoMicro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,temperatura,humedad,riego,iluminacion")] Parametro parametro)
+        public ActionResult Create([Bind(Include="ID,Modo_Operacion,Temperatura,Humedad,Riego,Iluminacion,Ventilador_Aire,Extractor_Aire,LastChange")] Parametro parametro)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +98,7 @@ namespace ProyectoMicro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,temperatura,humedad,riego,iluminacion")] Parametro parametro)
+        public ActionResult Edit([Bind(Include="ID,Modo_Operacion,Temperatura,Humedad,Riego,Iluminacion,Ventilador_Aire,Extractor_Aire,LastChange")] Parametro parametro)
         {
             if (ModelState.IsValid)
             {

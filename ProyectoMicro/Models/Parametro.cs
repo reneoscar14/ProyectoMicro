@@ -9,10 +9,15 @@ namespace ProyectoMicro.Models
     public class Parametro
     {
         public int ID { get; set; }
-        public float temperatura { get; set; }
-        public float humedad { get; set; }
-        public int riego { get; set; }
-        public int iluminacion { get; set; }
+        public string Modo_Operacion { get; set; }
+        public float Temperatura { get; set; }
+        public float Humedad { get; set; }
+        public string Riego { get; set; }
+        public string Iluminacion { get; set; }
+        public string Ventilador_Aire { get; set; }
+        public string Extractor_Aire { get; set; }
+        public DateTime LastChange { get; set; }
+
     }
     public class ParametroDBContext : DbContext
     {
