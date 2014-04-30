@@ -16,10 +16,18 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Modo_Operacion, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Cultivo, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Modo_Operacion)
-                @Html.ValidationMessageFor(model => model.Modo_Operacion)
+                @Html.EditorFor(model => model.Cultivo)
+                @Html.ValidationMessageFor(model => model.Cultivo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Modo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Modo)
+                @Html.ValidationMessageFor(model => model.Modo)
             </div>
         </div>
 
@@ -40,10 +48,26 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Riego, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Calefaccion, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Riego)
-                @Html.ValidationMessageFor(model => model.Riego)
+                @Html.EditorFor(model => model.Calefaccion)
+                @Html.ValidationMessageFor(model => model.Calefaccion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ventilador, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ventilador)
+                @Html.ValidationMessageFor(model => model.Ventilador)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Extractor, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Extractor)
+                @Html.ValidationMessageFor(model => model.Extractor)
             </div>
         </div>
 
@@ -56,26 +80,34 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Ventilador_Aire, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Riego, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Ventilador_Aire)
-                @Html.ValidationMessageFor(model => model.Ventilador_Aire)
+                @Html.EditorFor(model => model.Riego)
+                @Html.ValidationMessageFor(model => model.Riego)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Extractor_Aire, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Condicion_Riego, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Extractor_Aire)
-                @Html.ValidationMessageFor(model => model.Extractor_Aire)
+                @Html.EditorFor(model => model.Condicion_Riego)
+                @Html.ValidationMessageFor(model => model.Condicion_Riego)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LastChange, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Temporizador_Riego, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LastChange)
-                @Html.ValidationMessageFor(model => model.LastChange)
+                @Html.EditorFor(model => model.Temporizador_Riego)
+                @Html.ValidationMessageFor(model => model.Temporizador_Riego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Actualizado, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Actualizado)
+                @Html.ValidationMessageFor(model => model.Actualizado)
             </div>
         </div>
 

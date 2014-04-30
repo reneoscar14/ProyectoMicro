@@ -14,27 +14,85 @@ namespace ProyectoMicro.Controllers
     {
         private ParametroDBContext db = new ParametroDBContext();
 
-        // GET: /Parametros/
-
-      
-        
-        public ActionResult GETParametros(string modo,float temperatura, float humedad, string riego, string iluminacion, string ventilacion1, string ventilacion2)
+        public void GETParametros(string cultivo, string modo, float temperatura, float humedad, string calefaccion, string ventilacion1, string ventilacion2, string iluminacion, string riego, string condicionRiego, int temporizador)
         {
-            Parametro param = new Parametro();
-            param.Temperatura = temperatura;
-            param.Humedad = humedad;
-            param.Riego = riego;
-            param.Iluminacion = iluminacion;
-            param.Ventilador_Aire = ventilacion1;
-            param.Extractor_Aire = ventilacion2;
-            param.Modo_Operacion = modo;
-            param.LastChange = DateTime.Now;
-            db.Parametros.Add(param);
-            db.SaveChanges();
-            return View(db.Parametros.ToList());
+            Parametro parametro = new Parametro();
+            int x = db.Parametros.Count();
+
+            if (x == 5)
+            {
+                parametro = db.Parametros.Find(db.Parametros.First().ID);
+                db.Parametros.Remove(parametro);
+                db.SaveChanges();
+                parametro = null;
+
+            }
+            else { parametro = null; }
+            if (parametro == null)
+            {
+                Parametro param = new Parametro();
+                if (cultivo == "A")
+                {
+                    param.Cultivo = "Aji";
+                }
+                else if(cultivo == "T")
+                {
+                    param.Cultivo = "Tomate";
+                }
+                else if(cultivo == "P"){
+                    param.Cultivo = "Pepino";
+                }else if(cultivo == "S"){
+                    param.Cultivo = "Sin Cultivo";
+                }
+                if(modo == "M"){
+                    param.Modo = "Manual";
+                }else if(modo == "A"){
+                    param.Modo = "Auto";
+                }
+               
+                param.Temperatura = temperatura;
+                param.Humedad = humedad;
+               
+                if (calefaccion == "O") {
+                    param.Calefaccion = "ON";
+                }else if(calefaccion == "F"){
+                    param.Calefaccion = "OFF";
+                }
+
+                if(ventilacion1 == "O"){
+                    param.Ventilador = "ON";
+                }else if(ventilacion1 == "F"){
+                    param.Ventilador = "OFF";
+                }
+                if(ventilacion2 == "O"){
+                    param.Extractor = "ON";
+                }else if(ventilacion2 == "F"){
+                    param.Extractor = "OFF";
+                }
+                if(iluminacion == "O"){
+                    param.Iluminacion = "ON";
+                }else if(iluminacion == "F"){
+                    param.Iluminacion = "OFF";
+                }
+                if(riego == "O"){
+                    param.Riego = "ON";
+                }else if(riego == "F"){
+                    param.Riego = "OFF"
+                }
+                if(condicionRiego == "R"){
+                    param.Condicion_Riego = "Riego";
+                }else if(condicionRiego == "E"){
+                    param.Condicion_Riego = "Espera";
+                }else if(condicionRiego == "F"){
+                    param.Condicion_Riego = "Fin";
+                }
+                param.Temporizador_Riego = temporizador;
+                param.Actualizado = DateTime.Now;
+                db.Parametros.Add(param);
+                db.SaveChanges();
+            }
         }
-
-
+        // GET: /Parametros/
         public ActionResult Index()
         {
             return View(db.Parametros.ToList());
@@ -66,7 +124,7 @@ namespace ProyectoMicro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,Modo_Operacion,Temperatura,Humedad,Riego,Iluminacion,Ventilador_Aire,Extractor_Aire,LastChange")] Parametro parametro)
+        public ActionResult Create([Bind(Include="ID,Cultivo,Modo,Temperatura,Humedad,Calefaccion,Ventilador,Extractor,Iluminacion,Riego,Condicion_Riego,Temporizador_Riego,Actualizado")] Parametro parametro)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +156,7 @@ namespace ProyectoMicro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,Modo_Operacion,Temperatura,Humedad,Riego,Iluminacion,Ventilador_Aire,Extractor_Aire,LastChange")] Parametro parametro)
+        public ActionResult Edit([Bind(Include="ID,Cultivo,Modo,Temperatura,Humedad,Calefaccion,Ventilador,Extractor,Iluminacion,Riego,Condicion_Riego,Temporizador_Riego,Actualizado")] Parametro parametro)
         {
             if (ModelState.IsValid)
             {

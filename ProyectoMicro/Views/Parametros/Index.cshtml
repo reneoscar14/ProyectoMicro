@@ -6,11 +6,22 @@
 
 <h2>Estado del Sistema</h2>
 
+<p>
+    <script type="text/javascript">
+        var int = self.setInterval("refresh()", 1000);
+        function refresh() {
+            location.reload(true);
+        }
+    </script>
+</p>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Modo_Operacion)
+            @Html.DisplayNameFor(model => model.Cultivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Temperatura)
@@ -19,53 +30,72 @@
             @Html.DisplayNameFor(model => model.Humedad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Riego)
+            @Html.DisplayNameFor(model => model.Calefaccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ventilador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extractor)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Iluminacion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ventilador_Aire)
+            @Html.DisplayNameFor(model => model.Riego)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Extractor_Aire)
+            @Html.DisplayNameFor(model => model.Condicion_Riego)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastChange)
+            @Html.DisplayNameFor(model => model.Temporizador_Riego)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actualizado)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Modo_Operacion)
+            <center> @Html.DisplayFor(modelItem => item.Cultivo) </center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Temperatura)
+            <center> @Html.DisplayFor(modelItem => item.Modo) </center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Humedad)
+            <center> @Html.DisplayFor(modelItem => item.Temperatura)</center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Riego)
+            <center> @Html.DisplayFor(modelItem => item.Humedad)</center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Iluminacion)
+            <center> @Html.DisplayFor(modelItem => item.Calefaccion)</center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ventilador_Aire)
+            <center> @Html.DisplayFor(modelItem => item.Ventilador)</center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Extractor_Aire)
+            <center> @Html.DisplayFor(modelItem => item.Extractor)</center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastChange)
+            <center> @Html.DisplayFor(modelItem => item.Iluminacion)</center>
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <center> @Html.DisplayFor(modelItem => item.Riego)</center>
+        </td>
+        <td>
+            <center> @Html.DisplayFor(modelItem => item.Condicion_Riego)</center>
+        </td>
+        <td>
+            <center> @Html.DisplayFor(modelItem => item.Temporizador_Riego)</center>
+        </td>
+        <td>
+            <center> @Html.DisplayFor(modelItem => item.Actualizado)</center>
+        </td>
+        <td>   
         </td>
     </tr>
 }

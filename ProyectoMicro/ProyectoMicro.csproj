@@ -224,7 +224,6 @@
     <Content Include="Views\Parametros\Details.cshtml" />
     <Content Include="Views\Parametros\Edit.cshtml" />
     <Content Include="Views\Parametros\Index.cshtml" />
-    <Content Include="Views\Parametros\GETParametros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,13 +17,13 @@ namespace ProyectoMicro
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Parametros", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
 
                 name: "Parametros",
-                url: "{controller}/{action}/{modo}/{temperatura}/{humedad}/{riego}/{iluminacion}/{ventilacion1}/{ventilacion2}"
+                url: "{controller}/{action}/{cultivo}/{modo}/{temperatura}/{humedad}/{calefaccion}/{ventilacion1}/{ventilacion2}/{iluminacion}/{riego}/{condicionRiego}/{temporizador}"
                 );
         }
     }
