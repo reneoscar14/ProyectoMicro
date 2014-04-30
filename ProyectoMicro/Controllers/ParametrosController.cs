@@ -86,6 +86,9 @@ namespace ProyectoMicro.Controllers
                 }else if(condicionRiego == "F"){
                     param.Condicion_Riego = "Fin";
                 }
+                else if (condicionRiego == "N") {
+                    param.Condicion_Riego = "NA";
+                }
                 param.Temporizador_Riego = temporizador;
                 param.Actualizado = DateTime.Now;
                 db.Parametros.Add(param);
