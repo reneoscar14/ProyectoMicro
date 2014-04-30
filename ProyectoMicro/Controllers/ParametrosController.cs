@@ -77,7 +77,7 @@ namespace ProyectoMicro.Controllers
                 if(riego == "O"){
                     param.Riego = "ON";
                 }else if(riego == "F"){
-                    param.Riego = "OFF"
+                    param.Riego = "OFF";
                 }
                 if(condicionRiego == "R"){
                     param.Condicion_Riego = "Riego";
